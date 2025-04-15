@@ -28,7 +28,6 @@ Create a memory game in React where users try to identify which cards they have 
 
 #### Final Screenshot
 
-<!-- ![](./final.jpeg) -->
 
 #### Wireframe
 
@@ -38,7 +37,6 @@ This is a quick mockup used to draft the layout of the application and get an id
 
 ### Links
 
-- *will be added when complete*
 
 ## My process
 
@@ -49,15 +47,11 @@ This is a quick mockup used to draft the layout of the application and get an id
 
 ### What I learned
 
-- *will be added when complete*
 
 ### Continued development
 
-- *will be added when complete*
 
 ### Useful resources
-
-1. None so far, check back later!
 
 
 ## Author
