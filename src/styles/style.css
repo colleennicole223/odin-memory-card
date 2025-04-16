@@ -1,0 +1,86 @@
+/* Hello! Here are some headers that I use to quickly navigate my css */
+    /* 🟰variables */
+    /* 🅰️font */
+    /* 🔎size */
+    /* 🟪shape */
+    /* ➡️orientation */
+    /* ❇️color */
+    /* 📦 container */
+
+:root{
+    background-color: white;
+
+    /* 🟰variables */
+    --gap-horizontal: 24px;
+    --height-header: 15vh;
+    --width-card: 15vw;
+
+    /* 🔎size */
+    height: 100vh;
+    padding: 0%;
+    margin: 1vw;    
+}
+
+#main{
+    /* ➡️orientation */
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-horizontal);
+}
+
+#header{
+    background-color: lightblue;
+
+    /* 🔎size */
+    height: var(--height-header);
+
+    /* ➡️orientation */
+    display: flex;
+    gap: var(--gap-horizontal);
+    
+}
+
+.intro{
+    background-color: teal;
+
+    /* 🔎size */
+    width: 100%;
+}
+
+.difficulty{
+    background-color: teal;
+
+    /* 🔎size */
+    width: 100%;
+}
+
+.score{
+    background-color: teal;
+
+    /* 🔎size */
+    width: 100%;
+}
+
+#collection{
+    background-color: lightblue;
+
+    /* 🔎size */
+    padding: var(--gap-horizontal);  
+
+    /* ➡️orientation */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap-horizontal);
+
+}
+
+.card{
+    background-color: teal;
+
+    /* 🔎size */
+    width: var(--width-card);
+    min-width: 200px;
+    max-width: 300px;
+    aspect-ratio: 1/1.4142;
+}
