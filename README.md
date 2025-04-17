@@ -24,6 +24,8 @@ Create a memory game in React where users try to identify which cards they have 
 - Display current user score and best score from session. 
 - Cards should be displayed in a random order once one is clicked. 
 
+I decided to use [PokeAPI](https://pokeapi.co/) to create a Pokemon themed memory game.
+
 ### Screenshot
 
 #### Final Screenshot
@@ -44,12 +46,24 @@ This is a quick mockup used to draft the layout of the application and get an id
 
 - Figma (wireframe)
 - Vite, React, and Node.js
+- [PokeAPI](https://pokeapi.co/)
 
 ### What I learned
 
+- How to use an API! 🌈 Since there are 898 Pokemon available, I just have to display a random set of them on cards to the user using 
+  
+  `const pokemonInfo = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);`
 
-### Continued development
+  Which will provide attributes such as the name, sprites urls, etc.
 
+### Nice to haves
+
+- [] Type selection: play the game with only a specified type of Pokemon
+- [] Include shiny versions of Pokemons in hard difficulty
+- [] Pop up menu with rules for that difficulty (ex. hard having shiny)
+- [] Cards styled like playing cards 
+- [] Card wavering animation
+- [] Retro sound feedback
 
 ### Useful resources
 
