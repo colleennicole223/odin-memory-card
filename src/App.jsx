@@ -3,28 +3,29 @@ import './styles/style.css'
 import Difficulty from './components/Difficulty';
 import Score from './components/Score';
 import Card from './components/Card';
+import Intro from './components/Intro';
+import Collection from './components/Collection';
 
 function App() {
 
   // Set up some hooks for some variables we want to track 📃
-  const [getDifficulty, setDifficulty] = useState();
+  const [getDifficulty, setDifficulty] = useState({
+    level: "easy",
+    cardQuantity: 5,
+    description: "Easy mode displays five cards to keep track of.",
+  });
   const [getCurrentScore, setCurrentScore] = useState();
   const [getHighScore, setHighScore] = useState();
-  const [getCardCollection, setCardCollection] = useState({
-    name: "",
-    type: "",
-    clicked: false,
-  })
+
 
   return (
     <>
       <div id='main'>
 
         <div id='header'>
-          <div className='intro'>
-            <h2>Pokemon Memory Game</h2>
-            <h3>Try to not click on the same card twice.</h3>
-          </div>
+          <Intro
+            getDifficulty = {getDifficulty}
+          />
           <Difficulty
             setDifficulty = {setDifficulty}
             getDifficulty = {getDifficulty}/>
@@ -36,10 +37,10 @@ function App() {
         </div>
 
         <div id='collection'>
-          <Card
-            getCardCollection = {getCardCollection}
-            setCardCollection = {setCardCollection}/>
+          <Collection
+            getDifficulty = {getDifficulty}/>
         </div>
+
       </div>      
     </>
   )

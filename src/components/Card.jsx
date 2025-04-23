@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Card({getCardCollection, setCardCollection}){
+export default function Card({id}){
     return (
-        <div className='card'>.card</div>
+        <div className='card'>.card {id}</div>
     )
 }
