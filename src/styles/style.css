@@ -14,6 +14,28 @@
     --gap-horizontal: 24px;
     --height-header: 15vh;
     --width-card: 15vw;
+    --fillet: 10px;
+    --fillet-inside: 3px;
+
+    --color-border: #ffeb32;
+    --color-bug: #379a50;
+    --color-dark: #595878;
+    --color-dragon: #5bcad8;
+    --color-electric: #fbfc74;
+    --color-fairy: #ec096a;
+    --color-fighting: #f2623e;
+    --color-fire: #ff4a5d;
+    --color-flying: #92b2c7;
+    --color-ghost: #916691;
+    --color-grass: #13cd50;
+    --color-ground: #6f4921;
+    --color-ice: #d7f0fa;
+    --color-normal: #cb98a6;
+    --color-poison: #9b65da;
+    --color-psychic: #fa1193;
+    --color-rock: #8d3e24;
+    --color-steel: #3abe94;
+    --color-water: #82a6fa;
 
     /* 🔎size */
     height: 100vh;
@@ -76,11 +98,28 @@
 }
 
 .card{
-    background-color: teal;
+    
+    /* 🟪shape */
+    border-radius: var(--fillet);
+
 
     /* 🔎size */
+    padding: var(--fillet);  
     width: var(--width-card);
-    min-width: 200px;
-    max-width: 300px;
+    min-width: 120px;
+    max-width: 150px;
     aspect-ratio: 1/1.4142;
+
+    
+    /* ❇️color */
+    background-color: var(--color-border);
+}
+
+.cardInlay{
+    /* 🟪shape */
+    border-radius: var(--fillet-inside);
+
+    background-color: rgba(0, 0, 0, 0.199);
+    width: 100%;
+    height: 100%;
 }

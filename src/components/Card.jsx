@@ -1,7 +1,10 @@
 import React from 'react'
 
-export default function Card({id}){
+export default function Card({onClick, id}){
+
     return (
-        <div className='card'>.card {id}</div>
+        <div onClick={() => onClick(id)} className='card'>
+            <div className='cardInlay'>ID: {id}</div>
+        </div>
     )
 }
