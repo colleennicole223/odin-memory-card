@@ -14,8 +14,8 @@ function App() {
     cardQuantity: 5,
     description: "Easy mode displays five cards to keep track of.",
   });
-  const [getCurrentScore, setCurrentScore] = useState();
-  const [getHighScore, setHighScore] = useState();
+  const [getCurrentScore, setCurrentScore] = useState(0);
+  const [getHighScore, setHighScore] = useState(0);
 
 
   return (
@@ -38,7 +38,9 @@ function App() {
 
         <div id='collection'>
           <Collection
-            getDifficulty = {getDifficulty}/>
+            getDifficulty = {getDifficulty}
+            setCurrentScore = {setCurrentScore}
+            getCurrentScore = {getCurrentScore}/>
         </div>
 
       </div>      
