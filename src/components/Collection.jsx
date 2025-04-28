@@ -3,6 +3,9 @@ import Card from './Card'
 
 export default function Collection({getDifficulty, setCurrentScore, getCurrentScore}){
 
+    // Winner winner chicken dinner
+    const [getWinStatus, setWinStatus] = useState();
+
     // Keep track of points
     const points = 0; 
 
@@ -21,10 +24,17 @@ export default function Collection({getDifficulty, setCurrentScore, getCurrentSc
     const updateSelectedCards = (id) => {
         
         if(getSelected.find(card => card.id === id)){
+            setWinStatus(false);
             console.log("Selected repeat card, you lost.");
             setCurrentScore(0);
             setSelected([]);
         }else{
+            if((getCurrentScore+1) == getDifficulty.cardQuantity){
+                setWinStatus(true);
+                console.log("You won!");
+            }else{
+                setWinStatus();
+            }
             setCurrentScore(prevScore => prevScore + 1);
             console.log("Card was selected: "+id);
             const selectedCard = getCardCollection.find(card => card.id === id);
@@ -56,10 +66,16 @@ export default function Collection({getDifficulty, setCurrentScore, getCurrentSc
     }
 
     return (
-        <div id='collection'>
-            {Array.isArray(getCardCollection) && getCardCollection.map((card) => (
-            <Card onClick = {updateSelectedCards} key = {card.id} id = {card.id}/>
-            ))}
+        <div>
+            <h3>{getWinStatus == true ? "You Won! select a card to play again" : " "}</h3>
+            <h3>{getWinStatus == false ? "You lost, select a card to try again" : " "}</h3>
+            
+            <div id='collection'>
+            
+                {Array.isArray(getCardCollection) && getCardCollection.map((card) => (
+                <Card onClick = {updateSelectedCards} key = {card.id} id = {card.id}/>
+                ))}
+            </div>
         </div>
     )
 }
