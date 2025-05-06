@@ -62,7 +62,15 @@ export default function Collection({getDifficulty, setCurrentScore, getCurrentSc
             }
         }
 
-        setCardCollection([...getSelected, ...newCards]);
+        
+        const newCollection = [...getSelected, ...newCards].map((card) => ({
+            ...card, 
+            order: Math.floor(Math.random() * (1000-1) + 1),
+        }));
+
+
+        setCardCollection(newCollection.sort((a,b) => a.order - b.order));
+
     }
 
     return (
@@ -73,7 +81,7 @@ export default function Collection({getDifficulty, setCurrentScore, getCurrentSc
             <div id='collection'>
             
                 {Array.isArray(getCardCollection) && getCardCollection.map((card) => (
-                <Card onClick = {updateSelectedCards} key = {card.id} id = {card.id}/>
+                <Card onClick = {updateSelectedCards} key = {card.id} id = {card.id} order = {card.order}/>
                 ))}
             </div>
         </div>
