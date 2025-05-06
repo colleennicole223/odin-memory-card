@@ -16,26 +16,64 @@
     --width-card: 15vw;
     --fillet: 10px;
     --fillet-inside: 3px;
+    --border: 5px;
 
-    --color-border: #ffeb32;
-    --color-bug: #379a50;
+    --color-border: rgb(238, 238, 238);
+
+    --color-bug: #95e725;
+    --color-bug-background: #95e72580;
+
     --color-dark: #595878;
+    --color-dark-background: #59587880;
+
     --color-dragon: #5bcad8;
-    --color-electric: #fbfc74;
-    --color-fairy: #ec096a;
-    --color-fighting: #f2623e;
-    --color-fire: #ff4a5d;
+    --color-dark-dragon: #5bcad880;
+
+    --color-electric: #f7d02f;
+    --color-electric-background: #f7d02f80;
+
+    --color-fairy: #f599b4;
+    --color-fairy-background: #f599b480;
+    
+    --color-fighting: #e27463;
+    --color-fighting-background: #e2746380;
+
+    --color-fire: #ff4a5d;    
+    --color-fire-background: #ff4a5d80;
+
     --color-flying: #92b2c7;
+    --color-flying-background: #92b2c780;
+
     --color-ghost: #916691;
-    --color-grass: #13cd50;
-    --color-ground: #6f4921;
+    --color-ghost-background: #91669180;
+
+    --color-grass: #67aa2c;
+    --color-grass-background: #67aa2c80;
+
+    --color-ground: #8d3e24;
+    --color-ground-background: #8d3e2480;
+
+    --color-rock: #483e34;
+    --color-rock-background: #483e3480;
+
     --color-ice: #d7f0fa;
-    --color-normal: #cb98a6;
+    --color-ice-background: #d7f0fa80;
+
+    --color-normal: #aaaaaa;
+    --color-normal-background: #aaaaaa80;
+
     --color-poison: #9b65da;
+    --color-poison-background: #9b65da80;
+
     --color-psychic: #fa1193;
-    --color-rock: #8d3e24;
+    --color-psychic-background: #fa119380;
+
     --color-steel: #3abe94;
-    --color-water: #82a6fa;
+    --color-steel-background: #3abe9480;
+
+    --color-water: #67cbf5;
+    --color-water-background: #67cbf580;
+
 
     /* 🔎size */
     height: 100vh;
@@ -84,7 +122,7 @@
 }
 
 #collection{
-    background-color: lightblue;
+    /* background-color: lightblue; */
 
     /* 🔎size */
     padding: var(--gap-horizontal);  
@@ -104,26 +142,153 @@
 
 
     /* 🔎size */
-    padding: var(--fillet);  
     width: var(--width-card);
     min-width: 120px;
     max-width: 150px;
-    aspect-ratio: 1/1.4142;
+    aspect-ratio: 1/1.40;
 
     
     /* ❇️color */
     background-color: var(--color-border);
 }
 
-.cardInlay{
-    /* 🟪shape */
-    border-radius: var(--fillet-inside);
-
-    background-color: rgba(0, 0, 0, 0.199);
-    width: 100%;
-    height: 100%;
+.pokeImg{
+    
+    display: flex;
+    justify-self: center;
+    height: 50%;
 }
 
-.pokeImg{
-    width: 100%;
+.bug, .dark, .dragon, .electric, .fairy, .fighting, .fire, .flying, .ghost, .grass, .ground, .ice, .normal, .poison, .psychic, .rock, .steel, .water {
+    /* 🟪shape */
+    border-radius: var(--fillet);
+
+    /* 🔎size */
+    padding: var(--fillet);  
+}
+
+.bug{
+    /* ❇️color */
+    color: var(--color-bug);
+    border: solid var(--border) var(--color-bug);
+    background-color: var(--color-bug-background);
+}
+
+.dark{
+    /* ❇️color */
+    color: var(--color-dark);
+    border: solid var(--border) var(--color-dark);
+    background-color: var(--color-dark-background);
+}
+
+.dragon{
+    /* ❇️color */
+    color: var(--color-dragon);
+    border: solid var(--border) var(--color-dragon);
+    background-color: var(--color-dark-dragon);
+}
+
+.electric{
+    /* ❇️color */
+    color: var(--color-electric);
+    border: solid var(--border) var(--color-electric);
+    background-color: var(--color-electric-background);
+}
+
+.fairy{
+    /* ❇️color */
+    color: var(--color-fairy);
+    border: solid var(--border) var(--color-fairy);
+    background-color: var(--color-fairy-background);
+}
+
+.fighting{
+    /* ❇️color */
+    color: var(--color-fighting);
+    border: solid var(--border) var(--color-fighting);
+    background-color: var(--color-fighting-background);
+}
+
+.fire{
+    /* ❇️color */
+    color: var(--color-fire);
+    border: solid var(--border) var(--color-fire);
+    background-color: var(--color-fire-background);
+}
+
+.flying{
+    /* ❇️color */
+    color: var(--color-flying);
+    border: solid var(--border) var(--color-flying);
+    background-color: var(--color-flying-background);
+}
+
+.ghost{
+    /* ❇️color */
+    color: var(--color-ghost);
+    border: solid var(--border) var(--color-ghost);
+    background-color: var(--color-ghost-background);
+}
+
+.grass{
+    /* ❇️color */
+    color: var(--color-grass);
+    border: solid var(--border) var(--color-grass);
+    background-color: var(--color-grass-background);
+}
+
+.ground{
+    /* ❇️color */
+    color: var(--color-ground);
+    border: solid var(--border) var(--color-ground);
+    background-color: var(--color-ground-background);
+}
+
+.ice{
+    /* ❇️color */
+    color: var(--color-ice);
+    border: solid var(--border) var(--color-ice);
+    background-color: var(--color-ice-background);
+}
+
+.normal{
+    /* ❇️color */
+    color: var(--color-normal);
+    border: solid var(--border) var(--color-normal);
+    background-color: var(--color-normal-background);
+}
+
+.poison{
+    /* ❇️color */
+    color: var(--color-poison);
+    border: solid var(--border) var(--color-poison);
+    background-color: var(--color-poison-background);
+}
+
+.psychic{
+    /* ❇️color */
+    color: var(--color-psychic);
+    border: solid var(--border) var(--color-psychic);
+    background-color: var(--color-psychic-background);
+}
+
+.rock{
+    /* ❇️color */
+    color: var(--color-rock);
+    border: solid var(--border) var(--color-rock);
+    background-color: var(--color-rock-background);
+}
+
+.steel{
+    /* ❇️color */
+    color: var(--color-steel);
+    border: solid var(--border) var(--color-steel);
+    background-color: var(--color-steel-background);
+}
+
+.water{
+    /* ❇️color */
+    color: var(--color-water);
+    border: solid var(--border) var(--color-water);
+    background-color: var(--color-water-background);
 }
