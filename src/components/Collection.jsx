@@ -6,9 +6,6 @@ export default function Collection({getDifficulty, setCurrentScore, getCurrentSc
     // Winner winner chicken dinner
     const [getWinStatus, setWinStatus] = useState();
 
-    // Keep track of points
-    const points = 0; 
-
     // Keep track of card collection
     const [getCardCollection, setCardCollection] = useState([])
 
@@ -18,29 +15,40 @@ export default function Collection({getDifficulty, setCurrentScore, getCurrentSc
     // Update collection when difficulty changes 
     useEffect(() => {
         updateCardCollection();
-    }, [getDifficulty, getSelected]);
+    }, [getSelected]);
+
+    // Update collection when difficulty changes 
+    useEffect(() => {
+        reset();
+        updateCardCollection();
+        
+    }, [getDifficulty]);
+
+    // reset after difficulty is changed 
+    const reset = () => {
+        setWinStatus()
+        setCurrentScore(0);
+        setSelected([]);
+    }
 
     // Add selected card to saved collections
     const updateSelectedCards = (id) => {
-        
-        if(getSelected.find(card => card.id === id)){
+
+        if(getWinStatus==true || getWinStatus==false){
+            reset();
+        } else if (getSelected.find(card => card.id === id)){
             setWinStatus(false);
             console.log("Selected repeat card, you lost.");
-            setCurrentScore(0);
-            setSelected([]);
         }else{
             if((getCurrentScore+1) == getDifficulty.cardQuantity){
                 setWinStatus(true);
                 console.log("You won!");
-            }else{
-                setWinStatus();
             }
             setCurrentScore(prevScore => prevScore + 1);
             console.log("Card was selected: "+id);
             const selectedCard = getCardCollection.find(card => card.id === id);
             setSelected(selected => [...selected, selectedCard])
         }
-        
     }
 
     // Create new collection with cards previously selected plus randomly selected cards
@@ -75,13 +83,12 @@ export default function Collection({getDifficulty, setCurrentScore, getCurrentSc
 
     return (
         <div>
-            <h3>{getWinStatus == true ? "You Won! select a card to play again" : " "}</h3>
-            <h3>{getWinStatus == false ? "You lost, select a card to try again" : " "}</h3>
-            
+            <div class='won'>{getWinStatus == true ? "You Won! select a card to play again" : " "}</div>
+            <div class='lost'>{getWinStatus == false ? "You lost, select a card to try again" : " "}</div>
+
             <div id='collection'>
-            
                 {Array.isArray(getCardCollection) && getCardCollection.map((card) => (
-                <Card onClick = {updateSelectedCards} key = {card.id} id = {card.id} order = {card.order}/>
+                <Card onClick = {updateSelectedCards} key = {card.id} id = {card.id}/>
                 ))}
             </div>
         </div>

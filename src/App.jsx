@@ -25,24 +25,19 @@ function App() {
         <div id='header'>
           <Intro
             getDifficulty = {getDifficulty}
-          />
-          <Difficulty
             setDifficulty = {setDifficulty}
-            getDifficulty = {getDifficulty}/>
+          />
           <Score
-            setCurrentScore = {setCurrentScore}
             getCurrentScore = {getCurrentScore}
             setHighScore = {setHighScore}
-            getHighScore = {getHighScore}/>
+            getHighScore = {getHighScore}
+            getDifficulty={getDifficulty}/>
         </div>
 
-        <div id='collection'>
-          <Collection
+        <Collection
             getDifficulty = {getDifficulty}
             setCurrentScore = {setCurrentScore}
             getCurrentScore = {getCurrentScore}/>
-        </div>
-
       </div>      
     </>
   )

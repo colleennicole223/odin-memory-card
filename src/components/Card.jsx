@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 
-export default function Card({onClick, id, order}){
+export default function Card({onClick, id}){
 
     const [pokemon, setPokemon] = useState(null);
 
@@ -11,16 +11,18 @@ export default function Card({onClick, id, order}){
         .then((response) => setPokemon(response))       // <-- store usable data
     }, [id]);
 
-    if (!pokemon) return <p>Loading...</p>;
+    if (!pokemon) return <div className='card'> </div>;
 
     return (
         <div onClick={() => onClick(id)} className='card'>
             <div className={pokemon.types[0].type.name}>
-                
+                {id}
                 <img className='pokeImg' src={pokemon.sprites.front_default} alt={pokemon.name} />
-            </div>
-            ID: {id} Order: {order} Name: {pokemon.name} Type: {pokemon.types[0].type.name}
-            
+                <div className='title'>
+                    {pokemon.name.toUpperCase()} 
+                </div>
+                
+            </div>     
         </div>
     )
 }
