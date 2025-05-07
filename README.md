@@ -30,6 +30,8 @@ I decided to use [PokeAPI](https://pokeapi.co/) to create a Pokemon themed memor
 
 #### Final Screenshot
 
+![](./final.jpeg)
+
 #### Flow Diagram 
 
 ![](./flowdiagram.png)
@@ -41,6 +43,9 @@ This is a quick mockup used to draft the layout of the application and get an id
 ![](./wireframe.png)
 
 ### Links
+
+- Solution URL: [https://github.com/colleennicole223/odin-memory-card](https://github.com/colleennicole223/odin-memory-card)
+- Live Site URL: 
 
 ## My process
 
@@ -65,12 +70,9 @@ This is a quick mockup used to draft the layout of the application and get an id
 - [] Type selection: play the game with only a specified type of Pokemon
 - [] Include shiny versions of Pokemons in hard difficulty
 - [X] Update description based on selected difficulty (ex. hard having more cards) 
-- [] Cards styled like playing cards 
-- [] Card wavering animation
+- [X] Cards styled like playing cards 
+- [X] Card hovering animation
 - [] Retro sound feedback
-
-### Useful resources
-
 
 ## Author
 
