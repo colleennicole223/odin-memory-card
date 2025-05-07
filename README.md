@@ -45,7 +45,7 @@ This is a quick mockup used to draft the layout of the application and get an id
 ### Links
 
 - Solution URL: [https://github.com/colleennicole223/odin-memory-card](https://github.com/colleennicole223/odin-memory-card)
-- Live Site URL: 
+- Live Site URL: [https://odin-memory-card-cfulton.netlify.app/](https://odin-memory-card-cfulton.netlify.app/)
 
 ## My process
 
